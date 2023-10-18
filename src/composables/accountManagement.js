@@ -1,7 +1,7 @@
 
 const getUser = async () => {
   try {
-    const user = await fetch('http://chanathipgeist.ddns.net:5000/users')
+    const user = await fetch('http://nawat.myvnc.com:5000/users')
     if (user.ok) {
       const users = await user.json()
       return users
@@ -23,7 +23,7 @@ const createUser = async (newUser) => {
         return 'usernameinuse'
   } else {
     try {
-      const res = await fetch("http://chanathipgeist.ddns.net:5000/users", {
+      const res = await fetch("http://nawat.myvnc.com:5000/users", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -71,7 +71,7 @@ const deleteUser = async (userid) => {
   if (findUser(userid)) {
     try {
               const res = await fetch(
-                `http://chanathipgeist.ddns.net:5000/users/${userid}`,
+                `http://nawat.myvnc.com:5000/users/${userid}`,
                 {
                   method: "DELETE",
                 }
@@ -96,7 +96,7 @@ const updateUser = async (updateUser) => {
     }
     else {
       const res = await fetch(
-        `http://chanathipgeist.ddns.net:5000/users/${updateUser.username}`,
+        `http://nawat.myvnc.com:5000/users/${updateUser.username}`,
         {
           method: "PUT",
           headers: {
@@ -129,7 +129,7 @@ const checkUser = async (id, password) => {
   const checkuser = users.find(user => user.id === id && user.password === password)
   if(checkuser === undefined){return false}else{
   try {
-    const res = await fetch(`http://chanathipgeist.ddns.net:5000/users/${id}`)
+    const res = await fetch(`http://nawat.myvnc.com:5000/users/${id}`)
     if(res.status === 404){
       console.log("username or password is incorrect")
     }
@@ -150,7 +150,7 @@ const updateType =async(userid)=>{
 
   const typeObj = usr.type==='user'?{type: "librarian"}:{type: "user"}
   try {
-      const res = await fetch(`http://chanathipgeist.ddns.net:5000/users/${userid}`, {
+    const res = await fetch(`http://nawat.myvnc.com:5000/users/${userid}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
