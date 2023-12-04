@@ -1,6 +1,6 @@
 const getFavoriteBook= async (userId)=>{
   try {
-    const res = await fetch(`http://nawat.myvnc.com:5000/favorites?_expand=book&userId=${userId}`)
+    const res = await fetch(`https://library-server-74wp.onrender.com/favorites?_expand=book&userId=${userId}`)
       if (res.ok) {
         return await res.json();
       }
@@ -12,7 +12,7 @@ const getFavoriteBook= async (userId)=>{
   }
   const getFavoriteBookByUserId= async (userId)=>{
     try {
-      const res = await fetch(`http://nawat.myvnc.com:5000/favorites?userId=${userId}`)
+      const res = await fetch(`https://library-server-74wp.onrender.com/favorites?userId=${userId}`)
         if (res.ok) {
           return await res.json();
         }

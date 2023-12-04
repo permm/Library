@@ -1,6 +1,6 @@
 const getBooks = async () => {
     try {
-        const res = await fetch("http://nawat.myvnc.com:5000/books");
+        const res = await fetch("https://library-server-74wp.onrender.com/books");
         if (res.ok) {
             return await res.json();
         }
@@ -13,7 +13,7 @@ const getBooks = async () => {
 
 const getBookById = async (id) => {
     try {
-        const res = await fetch("http://nawat.myvnc.com:5000/books/"+id);
+        const res = await fetch("https://library-server-74wp.onrender.com/books/"+id);
         if (res.ok) {
             return await res.json();
         }
